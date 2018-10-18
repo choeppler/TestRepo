@@ -15,5 +15,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import sys
+
+
 if __name__ == '__main__':
-        print('hello')
+    args = 'world'
+    if len(sys.argv) > 1:
+       args = ' '.join(sys.argv[1:])
+    print('Hello %s!'%args)
