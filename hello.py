@@ -17,9 +17,14 @@
 
 import sys
 
+def create_greeting(*args):
+    who = 'world'
+    if len(args) > 0:
+        who = ' '.join(args)
+    return 'Hello %s!'%who
+
+def greet(*args):
+    print(create_greeting(*args))
 
 if __name__ == '__main__':
-    args = 'world'
-    if len(sys.argv) > 1:
-       args = ' '.join(sys.argv[1:])
-    print('Hello %s!'%args)
+    greet(*sys.argv[1:])
